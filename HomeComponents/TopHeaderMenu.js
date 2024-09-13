@@ -65,13 +65,11 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     width: "100%",
-
   },
   scrollContent: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical:10
-
+    paddingVertical: 10,
   },
   itemContainer: {
     alignItems: "center",

@@ -1,10 +1,10 @@
-import React from 'react';
-import { View,StyleSheet } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import SearchBar from '../Components/SearchBar';
-import CartIconAndText from '../Components/CartIconAndText';
-import AmazonPaySection from '../Components/AmazonPaySection';
-import ShoppingButton from '../Components/ShoppingButton';
+import React from "react";
+import { View, StyleSheet, ScrollView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import SearchBar from "../HomeComponents/SearchBar";
+import CartIconAndText from "../CartComponents/CartIconAndText";
+import AmazonPaySection from "../CartComponents/AmazonPaySection";
+import ShoppingButton from "../CartComponents/ShoppingButton";
 
 export default function CartScreen() {
   const navigation = useNavigation();
@@ -12,9 +12,11 @@ export default function CartScreen() {
   return (
     <View style={styles.container}>
       <SearchBar />
-      <CartIconAndText />
-      <AmazonPaySection />
-      <ShoppingButton onPress={() => navigation.navigate('Home')} />
+      <ScrollView style={styles.scrollContainer}>
+        <CartIconAndText />
+        <AmazonPaySection />
+        <ShoppingButton onPress={() => navigation.navigate("Home")} />
+      </ScrollView>
     </View>
   );
 }
@@ -22,6 +24,11 @@ export default function CartScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#90DDDC",
+  },
+  scrollContainer: {
+    flex: 1,
+    backgroundColor:'#D5D8D9',
+    marginTop:10
   },
 });

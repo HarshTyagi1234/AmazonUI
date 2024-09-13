@@ -8,51 +8,51 @@ const handleAlert = () => {
 export default function AmazonPaySection() {
   return (
     <View style={styles.container}>
-          <View style={styles.lineContainer}>
       <View style={styles.line} />
-      <View style={styles.imageTextWrapper}>
-        <Image
-          source={require('../assets/amazonpay.jpg')}
-          style={styles.image}
-        />
-        <View style={styles.textWrapper}>
-          <Text style={styles.text}>
-            Pay with <Text style={styles.amazonPayText}>Amazon Pay UPI</Text>
-          </Text>
-          <TouchableOpacity onPress={handleAlert}>
+      <View style={styles.contentContainer}>
+        <View style={styles.imageTextWrapper}>
+          <Image
+            source={require('../assets/amazonpay.jpg')}
+            style={styles.image}
+          />
+          <View style={styles.textWrapper}>
             <Text style={styles.text}>
-              Enjoy faster payments & instant refunds.
-              <Text style={styles.linkNow}> Link now</Text>
+              Pay with <Text style={styles.amazonPayText}>Amazon Pay UPI</Text>
             </Text>
-          </TouchableOpacity>
+            <TouchableOpacity onPress={handleAlert}>
+              <Text style={styles.text}>
+                Enjoy faster payments & instant refunds.
+                <Text style={styles.linkNow}> Link now</Text>
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
       <View style={styles.line} />
     </View>
-    </View>
-
   );
 }
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1
-
-  },
-  lineContainer: {
-    marginTop: 20,
+  container: {
     width: '100%',
+    backgroundColor: 'transparent', 
+  },
+  contentContainer: {
+    backgroundColor: 'white', 
+
+    paddingVertical: 10,
+  
   },
   line: {
     height: 1,
     backgroundColor: 'grey',
     width: '100%',
-    marginVertical: 10,
   },
   imageTextWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginHorizontal: 20,
+    marginLeft:10
   },
   image: {
     width: 60,

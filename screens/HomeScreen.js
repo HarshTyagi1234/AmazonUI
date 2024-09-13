@@ -1,15 +1,15 @@
 import React from "react";
 import { View, ScrollView, StyleSheet } from "react-native";
-import SearchBar from "../Components/SearchBar";
-import TopHeaderMenu from "../Components/TopHeaderMenu";
-import Location from "../Components/Location";
-import Trending from "../Components/Trending";
-import Bonus from "../Components/Bonus";
-import Offers from "../Components/Offers";
-import Skincare from "../Components/SkinCare";
-import Furniture from "../Components/Furniture";
-import Appliances from "../Components/Appliances";
-
+import SearchBar from "../HomeComponents/SearchBar";
+import TopHeaderMenu from "../HomeComponents/TopHeaderMenu";
+import Location from "../HomeComponents/Location";
+import Trending from "../HomeComponents/Trending";
+import Bonus from "../HomeComponents/Bonus";
+import Offers from "../HomeComponents/Offers";
+import Skincare from "../HomeComponents/SkinCare";
+import Furniture from "../HomeComponents/Furniture";
+import Smartphones from "../HomeComponents/Smartphones";
+import HouseholdAppliances from "../HomeComponents/HouseholdAppliances";
 
 export default function HomeScreen() {
   return (
@@ -21,9 +21,10 @@ export default function HomeScreen() {
         <Offers />
         <Trending />
         <Bonus />
-        <Skincare/>
-        <Furniture/>
-        <Appliances/>
+        <Skincare />
+        <Smartphones />
+        <Furniture />
+        <HouseholdAppliances />
       </ScrollView>
     </View>
   );
@@ -35,8 +36,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#90DDDC",
   },
   scrollViewContent: {
-
     alignItems: "center",
-  
+    borderStartColor:'#D5D8D9',
   },
 });

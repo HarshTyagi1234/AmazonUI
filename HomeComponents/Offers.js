@@ -1,15 +1,19 @@
 import React, { useState, useRef, useEffect } from "react";
-import { View, StyleSheet, ScrollView, Dimensions, Alert, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  Dimensions,
+  Alert,
+  TouchableOpacity,
+  Image,
+} from "react-native";
 
 const { width } = Dimensions.get("window");
 
 const Page = ({ imageSource, isActive, onPress }) => (
   <TouchableOpacity style={styles.page} onPress={onPress}>
-    <Image
-      source={imageSource}
-      style={styles.image}
-      resizeMode="cover"
-    />
+    <Image source={imageSource} style={styles.image} resizeMode="cover" />
     <View style={styles.dotsContainer}>
       {[0, 1, 2, 3, 4].map((index) => (
         <View
@@ -28,27 +32,24 @@ const Offers = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const scrollViewRef = useRef(null);
 
-
   const handleScroll = (event) => {
     const contentOffsetX = event.nativeEvent.contentOffset.x;
     const newPage = Math.floor(contentOffsetX / width);
     setCurrentPage(newPage);
   };
 
-
   const handlePagePress = () => {
     Alert.alert("Welcome");
   };
 
-
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const nextPage = (currentPage + 1) % 5; 
+      const nextPage = (currentPage + 1) % 5;
       setCurrentPage(nextPage);
       scrollViewRef.current.scrollTo({ x: nextPage * width, animated: true });
-    }, 3000); 
+    }, 3000);
 
-    return () => clearInterval(intervalId); 
+    return () => clearInterval(intervalId);
   }, [currentPage]);
 
   return (
@@ -59,31 +60,30 @@ const Offers = () => {
         pagingEnabled
         showsHorizontalScrollIndicator={false}
         onScroll={handleScroll}
-   
         style={styles.scrollView}
       >
         <Page
-          imageSource={require('../assets/offer1.jpg')}
+          imageSource={require("../assets/offer1.jpg")}
           isActive={currentPage}
           onPress={handlePagePress}
         />
         <Page
-          imageSource={require('../assets/offer2.jpg')}
+          imageSource={require("../assets/offer2.jpg")}
           isActive={currentPage}
           onPress={handlePagePress}
         />
         <Page
-          imageSource={require('../assets/offer3.jpg')}
+          imageSource={require("../assets/offer3.jpg")}
           isActive={currentPage}
           onPress={handlePagePress}
         />
         <Page
-          imageSource={require('../assets/offer4.jpg')}
+          imageSource={require("../assets/offer4.jpg")}
           isActive={currentPage}
           onPress={handlePagePress}
         />
         <Page
-          imageSource={require('../assets/offer5.jpg')}
+          imageSource={require("../assets/offer5.jpg")}
           isActive={currentPage}
           onPress={handlePagePress}
         />
@@ -97,10 +97,10 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 280,
     alignItems: "center",
-    marginTop:3,
-    backgroundColor:'white',
+    marginTop: 3,
+    backgroundColor: "white",
 
-    backgroundColor:'white'
+    backgroundColor: "white",
   },
   scrollView: {
     width: "100%",

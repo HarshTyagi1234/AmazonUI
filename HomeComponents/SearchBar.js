@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
-
 export default function SearchBar() {
   const handlePress = (message) => {
     Alert.alert(message);
@@ -68,7 +67,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
- 
   },
   iconContainer: {
     paddingHorizontal: 10,

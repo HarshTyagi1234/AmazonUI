@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#B9E9EF",
-    marginTop:8
+    marginTop: 8,
   },
   iconTextContainer: {
     flexDirection: "row",
@@ -51,5 +51,4 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: "#333",
   },
-
 });
