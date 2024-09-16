@@ -4,7 +4,10 @@ import { View, StyleSheet, Text, Image } from "react-native";
 const OtherMenu = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Keep shopping for</Text>
+      <View style={styles.header}>
+        <Text style={styles.text}>Keep shopping for</Text>
+        <Text style={styles.editText}>Edit</Text>
+      </View>
       <View style={styles.boxContainer}>
         <View style={styles.boxWrapper}>
           <View style={styles.box}>
@@ -26,6 +29,10 @@ const OtherMenu = () => {
           <Text style={styles.boxText}>Men's T-shirts</Text>
         </View>
       </View>
+
+      <Text style={{ color: "blue", fontSize: 16 }}>
+        View your browsing history
+      </Text>
     </View>
   );
 };
@@ -34,15 +41,21 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 3,
     width: "100%",
-    height: 250,
+    height: 270,
     backgroundColor: "white",
     padding: 10,
   },
-  text: {
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginBottom: 10,
+  },
+  text: {
     fontWeight: "bold",
     fontSize: 17,
   },
+
   boxContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -54,7 +67,7 @@ const styles = StyleSheet.create({
   },
   box: {
     width: "100%",
-    height:150,
+    height: 150,
     backgroundColor: "white",
     borderColor: "#ccc",
     borderWidth: 1,
@@ -68,6 +81,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#000",
   },
+  editText: { fontSize: 16, color: "blue", paddingRight: 4 },
 });
 
 export default OtherMenu;

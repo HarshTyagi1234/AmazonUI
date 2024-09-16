@@ -31,7 +31,7 @@ const List = () => {
         style={styles.returnContainer}
         onPress={() => navigation.navigate("Home")}
       >
-        <Text>Return to the Homepage</Text>
+        <Text style={{fontSize:17}}>Return to the Homepage</Text>
       </TouchableOpacity>
     </View>
   );
