@@ -8,6 +8,25 @@ import {
   Alert,
 } from "react-native";
 
+const smartphones = [
+  {
+    image: require("../assets/redmi.png"),
+    description: "Redmi series | starting 6,777Rs",
+  },
+  {
+    image: require("../assets/samsung.png"),
+    description: "Samsung series | starting 11,999Rs",
+  },
+  {
+    image: require("../assets/realme.png"),
+    description: "Realme series | starting 7,499Rs",
+  },
+  {
+    image: require("../assets/oneplus.png"),
+    description: "OnePlus Nord | starting 19,999Rs",
+  },
+];
+
 const Smartphones = () => {
   const showAlert = () => {
     Alert.alert("Smartphones");
@@ -22,42 +41,12 @@ const Smartphones = () => {
           </Text>
         </View>
         <View style={styles.grid}>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/redmi.png")}
-              style={styles.image}
-            />
-            <Text style={styles.description}>
-              Redmi series | starting 6,777Rs
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/samsung.png")}
-              style={styles.image}
-            />
-            <Text style={styles.description}>
-              Samsung series | starting 11,999Rs
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/realme.png")}
-              style={styles.image}
-            />
-            <Text style={styles.description}>
-              Realme series | starting 7,499Rs
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/oneplus.png")}
-              style={styles.image}
-            />
-            <Text style={styles.description}>
-              OnePlus Nord | starting 19,999Rs
-            </Text>
-          </TouchableOpacity>
+          {smartphones.map((phone, index) => (
+            <TouchableOpacity key={index} style={styles.box} onPress={showAlert}>
+              <Image source={phone.image} style={styles.image} />
+              <Text style={styles.description}>{phone.description}</Text>
+            </TouchableOpacity>
+          ))}
         </View>
       </View>
     </View>

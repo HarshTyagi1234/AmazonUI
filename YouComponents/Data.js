@@ -15,7 +15,7 @@ const Data = () => {
       </View>
       <View style={styles.flagContainer}>
         <Image
-          source={require("../assets/flag.png")}
+          source={require("../assets/flag2.png")}
           style={styles.flagImage}
         />
         <Text style={styles.languageText}>ENG</Text>

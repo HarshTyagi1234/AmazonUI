@@ -8,6 +8,18 @@ import {
   Alert,
 } from "react-native";
 
+const images = [
+  require("../assets/furniture.png"),
+  require("../assets/furniture2.png"),
+  require("../assets/furniture3.png"),
+  require("../assets/furniture4.png"),
+  require("../assets/furniture5.png"),
+  require("../assets/furniture6.png"),
+  require("../assets/furniture7.png"),
+  require("../assets/furniture.png"),
+  require("../assets/furniture9.png"),
+];
+
 const Furniture = () => {
   const showAlert = () => {
     Alert.alert("Furniture");
@@ -18,65 +30,19 @@ const Furniture = () => {
       <View style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.title}>
-            {" "}
             Upto 60% off | Furniture from stores nearby
           </Text>
         </View>
         <View style={styles.grid}>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/furniture.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/furniture2.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/furniture3.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/furniture4.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/furniture5.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/furniture6.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/furniture7.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/furniture.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/furniture9.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
+          {images.map((image, index) => (
+            <TouchableOpacity
+              key={index}
+              style={styles.box}
+              onPress={showAlert}
+            >
+              <Image source={image} style={styles.image} />
+            </TouchableOpacity>
+          ))}
         </View>
       </View>
     </View>

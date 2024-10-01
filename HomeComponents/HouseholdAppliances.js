@@ -8,9 +8,36 @@ import {
   Alert,
 } from "react-native";
 
+const categories = [
+  {
+    image: require("../assets/surfexcel.png"),
+    description: "Health & Household Supplies",
+  },
+  {
+    image: require("../assets/kitchen.png"),
+    description: "Home & Kitchen",
+  },
+  {
+    image: require("../assets/perfume.png"),
+    description: "Beauty",
+  },
+  {
+    image: require("../assets/oneplus.png"),
+    description: "Electronics",
+  },
+  {
+    image: require("../assets/apparel.png"),
+    description: "Apparel",
+  },
+  {
+    image: require("../assets/mouse.png"),
+    description: "Computer & Accessories",
+  },
+];
+
 const HouseholdAppliances = () => {
   const showAlert = () => {
-    Alert.alert("Welcome");
+    Alert.alert("Clicked");
   };
 
   return (
@@ -20,48 +47,12 @@ const HouseholdAppliances = () => {
           <Text style={styles.title}>Categories for you to browse</Text>
         </View>
         <View style={styles.grid}>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/surfexcel.png")}
-              style={styles.image}
-            />
-            <Text style={styles.description}>Health & Household Supplies</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/kitchen.png")}
-              style={styles.image}
-            />
-            <Text style={styles.description}>Home & Kitchen</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/perfume.png")}
-              style={styles.image}
-            />
-            <Text style={styles.description}>Beauty</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/oneplus.png")}
-              style={styles.image}
-            />
-            <Text style={styles.description}>Electronics</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/apparel.png")}
-              style={styles.image}
-            />
-            <Text style={styles.description}>Apparel</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/mouse.png")}
-              style={styles.image}
-            />
-            <Text style={styles.description}>Computer & Accessories</Text>
-          </TouchableOpacity>
+          {categories.map((item, index) => (
+            <TouchableOpacity key={index} style={styles.box} onPress={showAlert}>
+              <Image source={item.image} style={styles.image} />
+              <Text style={styles.description}>{item.description}</Text>
+            </TouchableOpacity>
+          ))}
         </View>
       </View>
     </View>

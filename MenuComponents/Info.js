@@ -16,7 +16,7 @@ const Info = () => {
         <Text style={styles.text}>
           Looking for the app settings? They've moved to
         </Text>
-        <Icon name="user" size={24} color="black" />
+        {/* <Icon name="user" size={24} color="black" /> */}
       </View>
     </View>
   );

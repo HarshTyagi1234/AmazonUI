@@ -9,7 +9,7 @@ export default function ShoppingButton({ onPress }) {
       </TouchableOpacity>
     </View>
   );
-}z
+}
 
 const styles = StyleSheet.create({        
   containter: {

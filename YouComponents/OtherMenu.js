@@ -1,38 +1,51 @@
 import React from "react";
-import { View, StyleSheet, Text, Image } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  Alert,
+  TouchableOpacity,
+} from "react-native";
 
 const OtherMenu = () => {
+  const showAlert = () => {
+    Alert.alert("Clicked");
+  };
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.text}>Keep shopping for</Text>
-        <Text style={styles.editText}>Edit</Text>
+        <TouchableOpacity>
+          <Text style={styles.editText} onPress={showAlert}>
+            Edit
+          </Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.boxContainer}>
         <View style={styles.boxWrapper}>
-          <View style={styles.box}>
+          <TouchableOpacity style={styles.box} onPress={showAlert}>
             <Image
               source={require("../assets/watch.png")}
-              style={{ width: 100, height: 100 }}
+              style={styles.watch}
             />
-          </View>
+          </TouchableOpacity>
           <Text style={styles.boxText}>Smart Watches</Text>
         </View>
 
         <View style={styles.boxWrapper}>
-          <View style={styles.box}>
+          <TouchableOpacity style={styles.box} onPress={showAlert}>
             <Image
               source={require("../assets/tshirt.png")}
-              style={{ width: 130, height: 130 }}
+              style={styles.tshirt}
             />
-          </View>
+          </TouchableOpacity>
           <Text style={styles.boxText}>Men's T-shirts</Text>
         </View>
       </View>
-
-      <Text style={{ color: "blue", fontSize: 16 }}>
-        View your browsing history
-      </Text>
+      <TouchableOpacity onPress={showAlert}>
+        <Text style={styles.editText}>View your browsing history</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -82,6 +95,8 @@ const styles = StyleSheet.create({
     color: "#000",
   },
   editText: { fontSize: 16, color: "blue", paddingRight: 4 },
+  watch: { width: 100, height: 100 },
+  tshirt: { width: 130, height: 130 },
 });
 
 export default OtherMenu;

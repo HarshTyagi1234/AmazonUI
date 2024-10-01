@@ -5,6 +5,8 @@ import SearchBar from "../HomeComponents/SearchBar";
 import CartIconAndText from "../CartComponents/CartIconAndText";
 import AmazonPaySection from "../CartComponents/AmazonPaySection";
 import ShoppingButton from "../CartComponents/ShoppingButton";
+import Middle from "../CartComponents/Middle";
+
 
 export default function CartScreen() {
   const navigation = useNavigation();
@@ -14,6 +16,7 @@ export default function CartScreen() {
       <SearchBar />
       <ScrollView style={styles.scrollContainer}>
         <CartIconAndText />
+        <Middle/>
         <AmazonPaySection />
         <ShoppingButton onPress={() => navigation.navigate("Home")} />
       </ScrollView>

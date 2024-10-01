@@ -1,18 +1,18 @@
 import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity, Alert } from "react-native";
 
-const BuyAgain = () => {
+const YourLists = () => {
   const showAlert = () => {
     Alert.alert("Clicked");
   };
   return (
     <View style={styles.container}>
-      <Text style={styles.text1}>Buy Again</Text>
+      <Text style={styles.text1}>Your Lists</Text>
       <Text style={styles.text2}>
-        See what others are reordering on Buy Again
+      You haven't created any lists.
       </Text>
       <TouchableOpacity style={styles.button} onPress={showAlert}>
-        <Text style={{ fontSize: 17 }}> Visit Buy Again</Text>
+        <Text style={{ fontSize: 17 }}> Create List</Text>
       </TouchableOpacity>
     </View>
   );
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BuyAgain;
+export default YourLists;

@@ -4,6 +4,8 @@ import TopBar from "../YouComponents/TopBar";
 import Data from "../YouComponents/Data";
 import OtherMenu from "../YouComponents/OtherMenu";
 import BuyAgain from "../YouComponents/BuyAgain";
+import YourLists from "../YouComponents/YourLists";
+import YourAccount from "../YouComponents/YourAccount";
 
 export default function MenuScreen() {
   return (
@@ -13,6 +15,8 @@ export default function MenuScreen() {
       <Data/>
       <OtherMenu/>
       <BuyAgain/>
+      <YourLists/>
+      <YourAccount/>
       </ScrollView>
 
     </View>
@@ -26,7 +30,7 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     flex: 1,
-    backgroundColor: "grey",
+    backgroundColor: "#DFD3C3",
     marginTop: 10,
   },
 });

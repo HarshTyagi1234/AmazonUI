@@ -40,8 +40,8 @@ const items = [
 ];
 
 const Trending = () => {
-  const handleIconPress = (iconName) => {
-    Alert.alert(`${iconName} Clicked`);
+  const showAlert = () => {
+    Alert.alert("Clicked  " );
   };
 
   return (
@@ -55,34 +55,34 @@ const Trending = () => {
           <TouchableOpacity
             key={item.id}
             style={styles.itemContainer}
-            onPress={() => handleIconPress("Item Container")}
+            onPress={ showAlert}
           >
             {item.id === 1 ? (
               <View style={styles.iconContainer}>
                 <TouchableOpacity
                   style={styles.iconWrapper}
-                  onPress={() => handleIconPress("PayPal")}
+                  onPress={showAlert}
                 >
                   <FontAwesome name="paypal" size={24} color="black" />
                   <Text style={styles.iconText}> Pay</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={styles.iconWrapper}
-                  onPress={() => handleIconPress("Dollar")}
+                  onPress={showAlert}
                 >
                   <FontAwesome name="dollar" size={24} color="black" />
                   <Text style={styles.iconText}>Send</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={styles.iconWrapper}
-                  onPress={() => handleIconPress("QR Code")}
+                  onPress={showAlert}
                 >
                   <FontAwesome name="qrcode" size={24} color="black" />
                   <Text style={styles.iconText}>Scan QR</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={styles.iconWrapper}
-                  onPress={() => handleIconPress("File Text")}
+                  onPress={showAlert}
                 >
                   <FontAwesome name="file-text-o" size={24} color="black" />
                   <Text style={styles.iconText}>Recharge Bills</Text>

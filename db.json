@@ -1,0 +1,28 @@
+{
+    "banners": [
+      {
+        "id": 1,
+        "name": "Amazon Prime ",
+        "url": "src/assets/images/"
+      }
+    ],
+
+    "products":[
+   
+        {
+            "id": 1,
+            "name": "Deal",
+            "url": "src/assets/images/"
+          }
+        ],
+        "category":[
+
+        {
+            "id": 1,
+            "name": "Deal",
+            "url": "src/assets/images/"
+          }
+    
+        ]
+  }
+  

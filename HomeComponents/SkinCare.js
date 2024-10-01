@@ -8,6 +8,18 @@ import {
   Alert,
 } from "react-native";
 
+const images = [
+  require("../assets/skincare.png"),
+  require("../assets/skincare2.png"),
+  require("../assets/skincare3.png"),
+  require("../assets/skincare4.png"),
+  require("../assets/skincare5.png"),
+  require("../assets/skincare6.png"),
+  require("../assets/skincare7.png"),
+  require("../assets/skincare.png"),
+  require("../assets/skincare9.png"),
+];
+
 const Skincare = () => {
   const showAlert = () => {
     Alert.alert("Beauty Products");
@@ -20,60 +32,15 @@ const Skincare = () => {
           <Text style={styles.title}>Skincare Products | Upto 60% off</Text>
         </View>
         <View style={styles.grid}>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/skincare.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/skincare2.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/skincare3.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/skincare4.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/skincare5.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/skincare6.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/skincare7.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/skincare.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.box} onPress={showAlert}>
-            <Image
-              source={require("../assets/skincare9.png")}
-              style={styles.image}
-            />
-          </TouchableOpacity>
+          {images.map((image, index) => (
+            <TouchableOpacity
+              key={index}
+              style={styles.box}
+              onPress={showAlert}
+            >
+              <Image source={image} style={styles.image} />
+            </TouchableOpacity>
+          ))}
         </View>
       </View>
     </View>
